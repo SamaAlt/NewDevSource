@@ -1,0 +1,427 @@
+/* Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+}
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+/* Diagonal Split Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(26.5deg, 
+    #000000 0%, 
+    #000000 50%, 
+    #c49138 50%, 
+    #d8a11b 100%);
+  z-index: -1;
+  background-attachment: fixed;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Utility */
+ul {
+  list-style: none;
+}
+
+.button_1 {
+  height: 40px;
+  background: linear-gradient(to right, #bf953f, #aa771c);
+  border: none;
+  padding: 0 24px;
+  color: white;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.button_1:hover {
+  background: #333;
+}
+/* Logo Styles */
+#branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 50px; /* Adjust as needed */
+  width: auto;
+}
+/* Header */
+header {
+  color: white;
+  padding: 20px 0;
+  position: relative;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header #branding h1 {
+  font-size: 24px;
+  margin: 0; /* Remove any default margins */
+}
+
+header nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+header a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  position: relative;
+}
+
+nav .highlight {
+  color: #aa771c;
+}
+
+nav .current a,
+nav a:hover {
+  color: #aa771c;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #aa771c;
+  transition: width 0.3s;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+header .current a::after {
+  width: 100%;
+}
+
+header a:hover::after {
+  width: 100%;
+}
+
+/* Showcase */
+#showcase {
+  min-height: 400px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+
+#showcase h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+#showcase p {
+  font-size: 1.25rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.showcase-logo {
+  height: 45px; /* Adjust this value to your preference */
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+
+/* Black Section */
+#black-section {
+  background: transparent;
+  color: white;
+  padding: 60px 0 100px;
+  position: relative;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: linear-gradient(to right, #000000, #1a1a1a);
+  margin: 10% auto;
+  padding: 30px;
+  border: 1px solid #aa771c;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  color: white;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  animation: modalopen 0.5s;
+}
+
+@keyframes modalopen {
+  from {opacity: 0; transform: translateY(-50px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aa771c;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: white;
+}
+
+.job-listing {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+.job-listing h3 {
+  color: #aa771c;
+  margin-bottom: 10px;
+}
+
+.job-listing p {
+  margin-bottom: 15px;
+}
+
+/* Boxes */
+#boxes {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+#boxes .box {
+  flex: 1;
+  min-width: 250px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(255,255,255,0.1);
+  border: 1px solid #333;
+  transition: transform 0.3s ease;
+}
+
+#boxes .box:hover {
+  transform: translateY(-10px);
+}
+
+#boxes .box img {
+  width: 120px;
+  margin-bottom: 15px;
+  filter: brightness(0) invert(1);
+}
+
+#boxes .box h3 {
+  color: #aa771c;
+  margin-bottom: 15px;
+}
+
+#boxes .box p {
+  color: #ddd;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  color: white;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Simple white text above contact box */
+.contact-intro-h1 {
+  text-align: center;
+
+}
+.contact-intro-text {
+  color: white;
+  text-align: center;
+  padding: 30px 15%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  max-width: 1200px;
+}
+
+/* Contact Us Styles */
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 220px); /* Adjusted to account for header, text, and footer */
+  padding: 20px 0;
+}
+.showcase-logo-contact-us {
+  height: 30px; /* Adjust this value to your preference */
+  width: auto;
+  filter: brightness(0) invert(1);
+}
+.contact-modal {
+  background: linear-gradient(to right, #00000097, #1a1a1a);
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border: 1px solid #aa771c;
+  animation: modalopen 0.5s;
+}
+
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.contact-main {
+  flex: 1;
+  min-width: 300px;
+}
+
+.contact-sidebar {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.page-title {
+  color: #aa771c;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.contact-form div {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #aa771c;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: white;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+.dark {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  width: 100%;
+}
+
+.dark h3 {
+  color: #aa771c;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.dark p {
+  margin-bottom: 15px;
+  color: #ddd;
+}
+
+/* Responsive adjustments */
+@media(max-width: 768px) {
+  header nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  #boxes {
+    flex-direction: column;
+  }
+
+  #showcase h1 {
+    font-size: 2rem;
+  }
+
+  #showcase p {
+    font-size: 1rem;
+  }
+
+  #main {
+    min-height: calc(100vh - 240px);
+  }
+  
+  .contact-modal {
+    padding: 30px 20px;
+  }
+  
+  .contact-container {
+    flex-direction: column;
+  }
+}
