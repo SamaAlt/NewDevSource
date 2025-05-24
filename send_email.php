@@ -1,7 +1,7 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $to = "admin@devsource.llc";
-    $subject = "New Contact Form Submission from Dev Source";
+    $subject = "New Contact Form Submission from Your Company";
     
     // Collect form data
     $name = htmlspecialchars($_POST['name']);
