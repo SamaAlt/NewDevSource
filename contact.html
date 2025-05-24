@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev Source | Contact Us</title>
+    <title>Contact Dev Source | Technology Consultants</title>
+    <meta name="description" content="Get in touch with Dev Source for custom technology solutions and consulting services.">
     <!-- Favicon links -->
     <link rel="icon" href="assets/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
@@ -11,6 +12,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!--Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -32,33 +35,57 @@
     </header>
     <div class="contact-intro-h1">
         <h1>
-            <span>DEV</span>
+            <span class="contact-header">CONTACT</span>
             <img src="assets/logo.png" alt="Dev Source Logo" class="showcase-logo-contact-us">
-            <span>SOURCE</span>
+            <span class="contact-header">US</span>
         </h1>
     </div>
 
     <div class="contact-intro-text">
-        <p>Your success is our priority, and we're committed to delivering tailored solutions that drive growth and innovation.</p>
+        <p>Let's start a conversation about how we can help you achieve your technology goals. Our team is ready to provide expert guidance tailored to your specific needs.</p>
     </div>
 
     <section id="main">
         <div class="contact-modal">
             <div class="contact-container">
                 <article class="contact-main">
-                    <h1 class="page-title">Contact Us</h1>
-                    <form id="contactForm" class="contact-form">
+                    <h1 class="page-title">Get In Touch</h1>
+                    <form id="contactForm" class="contact-form" action="send_email.php" method="POST">
+                        <!-- Honeypot field for spam protection -->
+                        <input type="text" name="_honey" style="display:none">
+                        
                         <div>
-                            <label for="name">Name</label>
-                            <input type="text" id="name" placeholder="Name" required>
+                            <label for="name">Your Name*</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
                         </div>
                         <div>
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="Email Address" required>
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your business email" required>
                         </div>
                         <div>
-                            <label for="message">Message</label>
-                            <textarea id="message" placeholder="Message" required></textarea>
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div>
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Enter your company name">
+                        </div>
+                        <div>
+                            <label for="service">Service Interest</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="Software Development">Software Development</option>
+                                <option value="Mobile Apps">Mobile App Development</option>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="IT Staffing">IT Staff Augmentation</option>
+                                <option value="Cloud Solutions">Cloud & DevOps</option>
+                                <option value="Consulting">Technology Consulting</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message">How Can We Help?*</label>
+                            <textarea id="message" name="message" placeholder="Describe your project or inquiry in detail" required></textarea>
                         </div>
                         <button class="button_1" type="submit">Send Message</button>
                     </form>
@@ -66,18 +93,42 @@
 
                 <aside class="contact-sidebar">
                     <div class="dark">
-                        <h3>Our Contact Information</h3>
-                        <p><strong>Email:</strong> admin@devsource.llc</p>
-                        <p><strong>Phone:</strong> (571) 659-5056</p>
-                        <p><strong>Hours:</strong> Monday-Friday: 9am-5pm</p>
+                        <h3>Connect With Our Team</h3>
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <p><strong>Email:</strong><br>admin@devsource.llc</p>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <p><strong>Phone:</strong><br>(571) 659-5056</p>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <p><strong>Hours:</strong><br>Monday-Friday: 9am-5pm EST</p>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p><strong>Headquarters:</strong><br>123 Tech Plaza, Suite 400<br>Arlington, VA 22202</p>
+                        </div>
                     </div>
                 </aside>
             </div>
         </div>
     </section>
 
+    <section id="map-section">
+        <div class="container">
+            <h2>Our Location</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.1503819263897!2d-77.05054298440382!3d38.89767627957059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b7bcdecbb1df%3A0x715969d86d0b76bf!2sThe%20White%20House!5e0!3m2!1sen!2sus!4v1629990000000!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>Dev Source &copy; 2025. All rights reserved.</p>
+        <div class="container">
+            <p>Dev Source &copy; 2025. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="js/script.js"></script>

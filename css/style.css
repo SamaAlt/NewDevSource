@@ -16,10 +16,12 @@ body {
   position: relative;
   overflow-x: hidden;
 }
+
 h1, h2, h3 {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
+
 /* Diagonal Split Background */
 body::before {
   content: '';
@@ -28,11 +30,11 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(26.5deg, 
-    #000000 0%, 
-    #000000 50%, 
-    #c49138 50%, 
-    #d8a11b 100%);
+  background: linear-gradient(26.5deg,  
+    #d8a11b 0%,
+    #c49138 50%,
+    #000000 50%,
+    #000000 100%);
   z-index: -1;
   background-attachment: fixed;
 }
@@ -63,6 +65,7 @@ ul {
 .button_1:hover {
   background: #333;
 }
+
 /* Logo Styles */
 #branding {
   display: flex;
@@ -71,9 +74,10 @@ ul {
 }
 
 .logo {
-  height: 50px; /* Adjust as needed */
+  height: 50px;
   width: auto;
 }
+
 /* Header */
 header {
   color: white;
@@ -90,7 +94,7 @@ header .container {
 
 header #branding h1 {
   font-size: 24px;
-  margin: 0; /* Remove any default margins */
+  margin: 0;
 }
 
 header nav ul {
@@ -105,10 +109,7 @@ header a {
   position: relative;
 }
 
-nav .highlight {
-  color: #aa771c;
-}
-
+nav .highlight,
 nav .current a,
 nav a:hover {
   color: #aa771c;
@@ -126,10 +127,7 @@ nav a::after {
   left: 0;
 }
 
-header .current a::after {
-  width: 100%;
-}
-
+header .current a::after,
 header a:hover::after {
   width: 100%;
 }
@@ -159,10 +157,15 @@ header a:hover::after {
   text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
-.showcase-logo {
-  height: 45px; /* Adjust this value to your preference */
+.showcase-logo,
+.showcase-logo-contact-us {
+  height: 45px;
   width: auto;
   filter: brightness(0) invert(1);
+}
+
+.showcase-logo-contact-us {
+  height: 30px;
 }
 
 /* Black Section */
@@ -173,107 +176,131 @@ header a:hover::after {
   position: relative;
 }
 
-/* Modal Styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(5px);
+/* Box Grid Styles */
+.box-link {
+  text-decoration: none;
 }
 
-.modal-content {
-  background: linear-gradient(to right, #000000, #1a1a1a);
-  margin: 10% auto;
-  padding: 30px;
-  border: 1px solid #aa771c;
-  border-radius: 5px;
-  width: 80%;
-  max-width: 600px;
-  color: white;
-  position: relative;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-  animation: modalopen 0.5s;
-}
-
-@keyframes modalopen {
-  from {opacity: 0; transform: translateY(-50px);}
-  to {opacity: 1; transform: translateY(0);}
-}
-
-.close {
-  position: absolute;
-  right: 20px;
-  top: 10px;
-  font-size: 28px;
-  font-weight: bold;
-  color: #aa771c;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.close:hover {
-  color: white;
-}
-
-.job-listing {
-  background: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  border: 1px solid #333;
-}
-
-.job-listing h3 {
-  color: #aa771c;
-  margin-bottom: 10px;
-}
-
-.job-listing p {
-  margin-bottom: 15px;
-}
-
-/* Boxes */
-#boxes {
-  display: flex;
-  justify-content: space-between;
+#boxes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-#boxes .box {
-  flex: 1;
-  min-width: 250px;
-  background: rgba(0, 0, 0, 0.7);
+#boxes-grid .box {
+  background-size: cover;
+  background-position: center;
   padding: 30px;
   text-align: center;
   border-radius: 5px;
   box-shadow: 0 2px 6px rgba(255,255,255,0.1);
   border: 1px solid #333;
   transition: transform 0.3s ease;
+  color: white;
+  aspect-ratio: 1/1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-#boxes .box:hover {
+#boxes-grid .box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+#boxes-grid .box:hover {
   transform: translateY(-10px);
 }
 
-#boxes .box img {
-  width: 120px;
-  margin-bottom: 15px;
-  filter: brightness(0) invert(1);
+#boxes-grid .box-content {
+  position: relative;
+  z-index: 2;
 }
 
-#boxes .box h3 {
+#boxes-grid .box h3 {
   color: #aa771c;
   margin-bottom: 15px;
 }
 
-#boxes .box p {
+#boxes-grid .box p {
   color: #ddd;
+}
+
+.contact-header, .services-header {
+    color: #aa771c;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+/* Services Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.service-box {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(170, 119, 28, 0.2);
+    border-color: #aa771c;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: #aa771c;
+    margin-bottom: 15px;
+}
+
+/* Special styling for cloud icon */
+.service-content {
+    flex: 1;
+}
+
+.service-content h3 {
+    color: #aa771c;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.service-content p {
+    margin-bottom: 20px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.service-btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* Responsive adjustments for services */
+@media(max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Footer */
@@ -284,12 +311,14 @@ footer {
   margin-top: auto;
 }
 
-/* Simple white text above contact box */
-.contact-intro-h1 {
+/* Contact and Service Text Styles */
+.contact-intro-h1,
+.service-intro-h1 {
   text-align: center;
-
 }
-.contact-intro-text {
+
+.contact-intro-text,
+.service-intro-text {
   color: white;
   text-align: center;
   padding: 30px 15%;
@@ -304,16 +333,17 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 220px); /* Adjusted to account for header, text, and footer */
+  min-height: calc(100vh - 220px);
   padding: 20px 0;
 }
-.showcase-logo-contact-us {
-  height: 30px; /* Adjust this value to your preference */
-  width: auto;
-  filter: brightness(0) invert(1);
-}
+
 .contact-modal {
-  background: linear-gradient(to right, #00000097, #1a1a1a);
+  background: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(26, 26, 26, 0.9)),
+    url('../assets/contact_modal_image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   width: 90%;
   max-width: 800px;
   margin: 0 auto;
@@ -322,6 +352,14 @@ footer {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border: 1px solid #aa771c;
   animation: modalopen 0.5s;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-main, 
+.contact-sidebar {
+  position: relative;
+  z-index: 2;
 }
 
 .contact-container {
@@ -393,16 +431,79 @@ footer {
   color: #ddd;
 }
 
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: linear-gradient(to right, #000000, #1a1a1a);
+  margin: 10% auto;
+  padding: 30px;
+  border: 1px solid #aa771c;
+  border-radius: 5px;
+  width: 80%;
+  max-width: 600px;
+  color: white;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  animation: modalopen 0.5s;
+}
+
+@keyframes modalopen {
+  from {opacity: 0; transform: translateY(-50px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #aa771c;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: white;
+}
+
+.job-listing {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+.job-listing h3 {
+  color: #aa771c;
+  margin-bottom: 10px;
+}
+
+.job-listing p {
+  margin-bottom: 15px;
+}
+
 /* Responsive adjustments */
 @media(max-width: 768px) {
   header nav ul {
-    flex-direction: column;
     gap: 10px;
     margin-top: 10px;
   }
 
-  #boxes {
-    flex-direction: column;
+  #boxes-grid {
+    grid-template-columns: 1fr;
   }
 
   #showcase h1 {
@@ -423,5 +524,9 @@ footer {
   
   .contact-container {
     flex-direction: column;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
   }
 }
