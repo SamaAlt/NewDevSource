@@ -272,7 +272,46 @@ header a:hover::after {
     font-weight: bold;
     font-size: 28px;
 }
+/* More Info Section Styles */
+#more-info {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 60px 0;
+    border-top: 1px solid #333;
+}
 
+.info-column {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-item {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease;
+}
+
+.info-item:last-child {
+    margin-bottom: 0;
+}
+
+.info-item:hover {
+    border-color: #aa771c;
+    box-shadow: 0 10px 20px rgba(170, 119, 28, 0.1);
+}
+
+.info-item h3 {
+    color: #aa771c;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+.info-item p {
+    color: #ddd;
+    line-height: 1.6;
+}
 /* Services Grid Layout */
 .services-grid {
     display: grid;
