@@ -23,20 +23,39 @@ h1, h2, h3 {
 }
 
 /* Diagonal Split Background */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(26.5deg,  
-    #d8a11b 0%,
-    #c49138 50%,
-    #000000 50%,
-    #000000 100%);
-  z-index: -1;
-  background-attachment: fixed;
+/* Replace your current body::before styles with this: */
+
+/* Diagonal Split Background - Desktop */
+@media screen and (min-width: 769px) {
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(26.5deg,  
+      #d8a11b 0%,
+      #c49138 50%,
+      #000000 50%,
+      #000000 100%);
+    z-index: -1;
+    background-attachment: fixed;
+  }
+}
+
+/* Solid Black Background - Mobile */
+@media screen and (max-width: 768px) {
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000;
+    z-index: -1;
+  }
 }
 
 .container {
