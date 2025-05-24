@@ -68,12 +68,29 @@ h1, h2, h3 {
 ul {
   list-style: none;
 }
+/* Add these styles to your CSS */
+.service-btn {
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+}
 
+/* If you want the links to maintain the button styling on hover/focus */
+.button_1:hover, Ou
+.button_1:focus {
+    color: white;
+    text-decoration: none;
+}
 .button_1 {
   height: 40px;
   background: linear-gradient(to right, #bf953f, #aa771c);
   border: none;
   padding: 0 24px;
+  display: inline-block;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;  
   color: white;
   font-weight: 600;
   border-radius: 5px;
