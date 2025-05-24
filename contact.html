@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Dev Source | Technology Consultants</title>
-    <meta name="description" content="Get in touch with Dev Source for custom technology solutions and consulting services.">
+    <title>Contact Your Company | Technology Consultants</title>
+    <meta name="description" content="Get in touch with Your Company for custom technology solutions and consulting services.">
     <!-- Favicon links -->
     <link rel="icon" href="assets/favicon.png" type="image/x-icon">
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
@@ -20,9 +20,9 @@
         <div class="container">
             <div id="branding">
                 <a href="index.html">
-                    <img src="assets/logo.png" alt="Dev Source Logo" class="logo">
+                    <img src="assets/logo.png" alt="Your Company Logo" class="logo">
                 </a>
-                <h1><span class="highlight">Dev</span> Source</h1>
+                <h1><span class="highlight">Your</span> Company</h1>
             </div>
             <nav>
                 <ul>
@@ -33,10 +33,11 @@
             </nav>
         </div>
     </header>
+    
     <div class="contact-intro-h1">
         <h1>
             <span class="contact-header">CONTACT</span>
-            <img src="assets/logo.png" alt="Dev Source Logo" class="showcase-logo-contact-us">
+            <img src="assets/logo.png" alt="Your Company Logo" class="showcase-logo-contact-us">
             <span class="contact-header">US</span>
         </h1>
     </div>
@@ -50,25 +51,25 @@
             <div class="contact-container">
                 <article class="contact-main">
                     <h1 class="page-title">Get In Touch</h1>
-                    <form id="contactForm" class="contact-form" action="send_email.php" method="POST">
-                        <!-- Honeypot field for spam protection -->
-                        <input type="text" name="_honey" style="display:none">
+                    <form id="contactForm" class="contact-form" action="https://formspree.io/f/code method="POST">
+                        <!-- Honeypot field -->
+                        <input type="hidden" name="_gotcha">
                         
                         <div>
                             <label for="name">Your Name*</label>
-                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                            <input type="text" id="name" name="name" required>
                         </div>
                         <div>
                             <label for="email">Email Address*</label>
-                            <input type="email" id="email" name="email" placeholder="Enter your business email" required>
+                            <input type="email" id="email" name="email" required>
                         </div>
                         <div>
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                            <input type="tel" id="phone" name="phone">
                         </div>
                         <div>
                             <label for="company">Company Name</label>
-                            <input type="text" id="company" name="company" placeholder="Enter your company name">
+                            <input type="text" id="company" name="company">
                         </div>
                         <div>
                             <label for="service">Service Interest</label>
@@ -85,7 +86,7 @@
                         </div>
                         <div>
                             <label for="message">How Can We Help?*</label>
-                            <textarea id="message" name="message" placeholder="Describe your project or inquiry in detail" required></textarea>
+                            <textarea id="message" name="message" required></textarea>
                         </div>
                         <button class="button_1" type="submit">Send Message</button>
                     </form>
@@ -120,12 +121,14 @@
         <div class="container">
             <h2>Our Location</h2>
             <div class="map-container">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198740.5334039372!2d-77.1555634!3d38.8046264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b6a6e7d3d3a9%3A0x7a1d4f3e0e6b3b1d!2sAlexandria%2C%20VA!5e0!3m2!1sen!2sus!4v1629990000000!5m2!1sen!2sus" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>        </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198740.5334039372!2d-77.1555634!3d38.8046264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b6a6e7d3d3a9%3A0x7a1d4f3e0e6b3b1d!2sAlexandria%2C%20VA!5e0!3m2!1sen!2sus!4v1629990000000!5m2!1sen!2sus" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>Dev Source &copy; 2025. All rights reserved.</p>
+            <p>Your Company &copy; 2025. All rights reserved.</p>
         </div>
     </footer>
 
